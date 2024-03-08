@@ -1,0 +1,26 @@
+<div id="app"></div>
+<script src="/jquery/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+    	let setAjax = function (url, data = {}, async = true) {
+	        return {
+	            url: url,
+	            type: 'POST',
+	            async: async,
+	            crossDomain: true,
+	            dataType: "json",
+	            data: JSON.stringify(data),
+	            headers: {
+	                "Content-Type": "application/json"
+	            },
+	        }
+	    }
+
+	    $.ajax(setAjax("https://sport.ttyingqiu.com/sportdata/f?platform=web", {
+            leagueId: 2709,
+            apiName: 'queryLeagueSeasons'
+        })).done(function (res) {
+	    	console.log(res);
+        });
+    });
+</script>
