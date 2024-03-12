@@ -16,10 +16,7 @@
 	        }
 	    }
 
-	    $.ajax(setAjax("https://sport.ttyingqiu.com/sportdata/f?platform=web", {
-            leagueId: 2709,
-            apiName: 'queryLeagueSeasons'
-        })).done(function (res) {
+	    $.ajax(setAjax("https://searchplugin.csdn.net/api/v1/ip/get", {})).done(function (res) {
 	    	console.log(res);
         });
     });
